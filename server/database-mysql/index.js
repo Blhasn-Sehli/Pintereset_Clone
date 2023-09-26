@@ -10,6 +10,21 @@ sequelize.authenticate()
     .catch((err) => console.log(err));
 
 const User = require("../models/user.model")(sequelize, DataTypes)
+const Pin = require("../models/pin.model")(sequelize, DataTypes)
+const Comment = require("../models/comment.model")(sequelize, DataTypes)
+
+
+
+User.hasMany(Pin)
+Pin.belongsTo(User)
+
+
+
+User.hasMany(Comment)
+Comment.belongsTo(User)
+
+Pin.hasMany(Comment)
+Comment.belongsTo(Pin)
 
 
 
@@ -18,11 +33,17 @@ const User = require("../models/user.model")(sequelize, DataTypes)
 
 
 
-sequelize.sync({ alter: true })
-    .then(() => console.log('tables are created'))
-    .catch((err) => console.log(err));
+
+
+
+// sequelize.sync({ alter: true, force: true })
+//     .then(() => console.log('tables are created'))
+//     .catch((err) => console.log(err));
 
 
 const db = {}
+db.User = User
+db.Comment = Comment
+db.Pin = Pin
 db.sequelize = sequelize
 module.exports = db; 

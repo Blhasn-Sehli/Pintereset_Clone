@@ -12,8 +12,10 @@ sequelize.authenticate()
 const User = require("../models/user.model")(sequelize, DataTypes)
 const Pin = require("../models/pin.model")(sequelize, DataTypes)
 const Comment = require("../models/comment.model")(sequelize, DataTypes)
+const Category = require("../models/category.model")(sequelize, DataTypes)
 
-
+Category.hasMany(Pin)
+Pin.belongsTo(Category)
 
 User.hasMany(Pin)
 Pin.belongsTo(User)
@@ -45,5 +47,6 @@ const db = {}
 db.User = User
 db.Comment = Comment
 db.Pin = Pin
+db.Category=Category
 db.sequelize = sequelize
 module.exports = db; 

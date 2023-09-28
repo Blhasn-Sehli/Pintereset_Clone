@@ -1,38 +1,235 @@
-.App {
-  text-align: center;
+.btn {
+    background-color: #fff;
+    color: black
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn:hover {
+    background-color: #F0F0F0;
+    color: black
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.svg:hover {
+    background-color: #F0F0F0
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.btn:focus {
+    background-color: black;
+    color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.btn svg {
+    fill: red;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn:focus svg {
+    fill: white;
+}
+
+.all_cards {
+    width: fit-content;
+    margin: 10rem 5rem 10rem 17rem;
+    padding: auto;
+    text-align: center;
+    flex-wrap: wrap;
+    /* grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));*/
+    gap: 1rem;
+}
+
+.clomun {
+    flex: 25%;
+    display: flex;
+    vertical-align: middle;
+    max-width: fit-content;
+    flex-direction: column;
+}
+
+/* 
+.save_btn {
+    position: relative;
+    top: -40%;
+    display: none;
+    right: -75%;
+    bottom: 88%;
+    border: none;
+    background-color: red;
+} */
+.pin:hover {
+    filter: brightness(50%);
+}
+
+.pindetails {
+    height: fit-content;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    margin: 5.3rem 10rem 10rem 15rem;
+}
+
+.onepost {
+    display: flex;
+    width: 88%;
+    /* ///adeded */
+    height: 90vh;
+    background-color: white;
+}
+
+.part1 {
+    position: relative;
+}
+
+.part2 {
+    position: relative;
+    /* background-color: red; */
+}
+
+.smNav {
+    height: 7rem;
+    /* border-radius: 20%; */
+    border-top-right-radius: 2rem;
+    /* position: static; */
+    /* background-color: red; */
+}
+
+.pin_content {
+    position: relative;
+    height: 70vh;
+    flex-direction: column;
+    gap: 2rem;
+    /* background-color: aqua; */
+    overflow: auto;
+    text-align: justify;
+}
+
+.user {
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: blue; */
+}
+
+.infos {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    /* flex-direction: column; */
+}
+
+.names {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.createPin_container {
+    /* width: fit-content; */
+    /* width: 60%; */
+    height: 100vh;
+    width: 100vw;
+    /* height: 80vh; */
+    background-color: #E9E9E9;
+    /* margin: 10rem 5rem 10rem 20rem; */
+    /* flex-wrap: wrap; */
+    /* padding: auto; */
+    /* text-align: center; */
+    /* flex-wrap: wrap; */
+    /* grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));*/
+    /* gap: 1rem; */
+
+}
+
+.child {
+    margin-top: 3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 80%;
+    flex-direction: column;
+    background-color: white;
+}
+
+.tabs {
+    /* position: relative; */
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: white; */
+}
+
+.content {
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+.wave-group {
+    position: relative;
+    width: 100%;
+}
+
+.wave-group .input {
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #515151;
+    background: transparent;
+}
+
+.wave-group .input:focus {
+    outline: none;
+}
+
+
+
+
+.wave-group .input:focus~label .label-char,
+.wave-group .input:valid~label .label-char {
+    transform: translateY(-20px);
+    font-size: 14px;
+    color: #5264AE;
+}
+
+.wave-group .bar {
+    position: relative;
+    display: block;
+    width: inherit;
+}
+
+.wave-group .bar:before,
+.wave-group .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #5264AE;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.wave-group .bar:before {
+    left: 50%;
+}
+
+.wave-group .bar:after {
+    right: 50%;
+}
+
+.wave-group .input:focus~.bar:before,
+.wave-group .input:focus~.bar:after {
+    width: 50%;
 }

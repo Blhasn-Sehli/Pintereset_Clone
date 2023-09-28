@@ -38,14 +38,14 @@ module.exports = {
         }
     }
     ,
-    getCommentsBypost: async (req, res) => {
-        try {
-            const allCommentsbyPin = await Comment.findAll({ where: { pinId: req.params.pinId } })
-            res.status(200).json(allCommentsbyPin)
-        } catch (error) {
-            res.json(error)
-        }
-    }
+    // getCommentsBypost: async (req, res) => {
+    //     try {
+    //         const allCommentsbyPin = await Comment.findAll({ where: { pinId: req.params.pinId } })
+    //         res.status(200).json(allCommentsbyPin)
+    //     } catch (error) {
+    //         res.json(error)
+    //     }
+    // }
 
 
 
